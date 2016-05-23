@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <h1>jQuery Todo List Example</h1>
+<div>
+  <h1>Todo List</h1>
 
   <form>
     <input class="new-todo" type="text" name="todo">
@@ -18,6 +19,7 @@
   <ol class="todo-list">
     <li>Make a todo list using jQuery</li>
   </ol>
+</div>
 </body>
 
 <script>
@@ -25,6 +27,11 @@
     e.preventDefault();
     $('ol').append('<li>'+ $('.new-todo').val() +'</li>');
     $('.new-todo').val('');
+  })
+
+  $(document).on('click', 'li', function(e) {
+    e.preventDefault();
+    $(this).remove();
   })
 </script>
 
