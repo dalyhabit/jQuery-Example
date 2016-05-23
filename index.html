@@ -3,9 +3,28 @@
 <head>
   <meta charset="utf-8">
   <title>jQuery Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 
 <body>
+  <h1>jQuery Todo List Example</h1>
 
+  <form>
+    <input class="new-todo" type="text" name="todo">
+    <input type="submit" value="submit">
+  </form>
+
+  <ol class="todo-list">
+    <li>Make a todo list using jQuery</li>
+  </ol>
 </body>
+
+<script>
+  $('form').submit(function (e) {
+    e.preventDefault();
+    $('ol').append('<li>'+ $('.new-todo').val() +'</li>');
+    $('.new-todo').val('');
+  })
+</script>
+
 </html>
